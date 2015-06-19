@@ -1,0 +1,50 @@
+{
+  "name": "security service",
+  "apiVersion": "gm",
+  "baseUrl": "https://videomanager.movingimage24.com/rest/gm/",
+  "description": "security methods in video manager",
+  "operations": {
+    "getUser": {
+      "httpMethod": "GET",
+      "uri": "getuser.json",
+      "responseModel" : "User",
+      "parameters": {
+        "username": {
+          "type": "string",
+          "required": true,
+          "location": "query"
+        }
+      }
+    },
+    "login" : {
+      "httpMethod" : "POST",
+      "uri" : "getusertoken.json",
+      "responseModel" : "userToken",
+      "parameters": {
+        "app_name": {
+          "location": "postField",
+          "static": true,
+          "default" : "mi-statistics"
+        },
+        "username": {
+          "location": "postField",
+          "required": true,
+          "sentAs" : "login_user_name"
+        },
+        "password": {
+          "location": "postField",
+          "required": true,
+          "sentAs" : "login_user_passwd"
+        }
+      }
+    }
+  },
+  "models": {
+    "userToken" : {
+      "class" : "array"
+    },
+    "User" : {
+      "class" : "Mi\\VideoManager\\SDK\\Model\\User"
+    }
+  }
+}

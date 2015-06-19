@@ -1,0 +1,7 @@
+{
+    "version": "1.0",
+    "name": "mi/videomanager-sdk",
+    "path-mappings": {
+        "/mi/videomanager-sdk": "resources"
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "mi/videomanager-sdk",
+  "description": "SDK for the VideoManager REST API",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "sdk",
+    "videomanager"
+  ],
+  "authors": [
+    {
+      "name": "Alexander Miehe",
+      "email": "alexander.miehe@movingimage.com"
+    }
+  ],
+  "minimum-stability": "beta",
+  "autoload": {
+    "psr-4": {
+      "ScoreYa\\Cinderella\\SDK\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ScoreYa\\Cinderella\\SDK\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "require": {
+    "mi/guzzle-service-builder": "~1.0@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mi\\VideoManager\\SDK\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mi\\VideoManager\\SDK\\Tests\\": "tests/"
+    }
+  }
+}

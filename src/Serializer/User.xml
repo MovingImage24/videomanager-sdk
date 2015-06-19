@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="Mi\VideoManager\SDK\Model\User" exclusion-policy="ALL">
+    <property name="username" type="string" since-version="1.0" expose="true" />
+    <property name="email" type="string" since-version="1.0" expose="true" />
+    <property name="videoManagerId" serialized-name="videomanager" type="integer" since-version="1.0" expose="true" />
+    <property name="id" type="integer" since-version="1.0" expose="true" />
+  </class>
+</serializer>
