@@ -1,4 +1,4 @@
-# Guzzle Service Builder
+# VideoManager SDK
 
 [![Build Status](https://travis-ci.org/MovingImage24/videomanager-sdk.svg?branch=master)](https://travis-ci.org/MovingImage24/videomanager-sdk)
 [![Latest Stable Version](https://poser.pugx.org/mi/videomanager-sdk/v/stable)](https://packagist.org/packages/mi/videomanager-sdk)
