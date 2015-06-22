@@ -14,16 +14,6 @@
     }
   ],
   "minimum-stability": "beta",
-  "autoload": {
-    "psr-4": {
-      "ScoreYa\\Cinderella\\SDK\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "ScoreYa\\Cinderella\\SDK\\Tests\\": "tests/"
-    }
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0-dev"
