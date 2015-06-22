@@ -28,4 +28,4 @@
 
 # License
 
-This bundle is under the [MIT license](https://github.com/MovingImage24/videomanager-sdk/blob/master/LICENSE).
+This library is under the [MIT license](https://github.com/MovingImage24/videomanager-sdk/blob/master/LICENSE).
