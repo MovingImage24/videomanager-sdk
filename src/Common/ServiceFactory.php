@@ -20,8 +20,10 @@ class ServiceFactory implements ServiceFactoryInterface
      * @param GuzzleServiceFactoryInterface $baseServiceFactory
      * @param ApiKeyTokenInterface          $apiKeyToken
      */
-    public function __construct(GuzzleServiceFactoryInterface $baseServiceFactory, ApiKeyTokenInterface $apiKeyToken)
-    {
+    public function __construct(
+        GuzzleServiceFactoryInterface $baseServiceFactory,
+        ApiKeyTokenInterface $apiKeyToken = null
+    ) {
         $this->baseServiceFactory = $baseServiceFactory;
         $this->apiKeyToken        = $apiKeyToken;
     }

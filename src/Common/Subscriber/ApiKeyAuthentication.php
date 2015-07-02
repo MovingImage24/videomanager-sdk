@@ -19,7 +19,7 @@ class ApiKeyAuthentication implements SubscriberInterface
      * @param Description          $description
      * @param ApiKeyTokenInterface $apiKeyToken
      */
-    public function __construct(Description $description, ApiKeyTokenInterface $apiKeyToken)
+    public function __construct(Description $description, ApiKeyTokenInterface $apiKeyToken = null)
     {
         $this->description = $description;
         $this->apiKeyToken = $apiKeyToken;
@@ -35,6 +35,10 @@ class ApiKeyAuthentication implements SubscriberInterface
 
     public function onPrepared(PreparedEvent $event)
     {
+        if ($this->apiKeyToken === null) {
+            return;
+        }
+
         $command   = $event->getCommand();
         $operation = $this->description->getOperation($command->getName());
 

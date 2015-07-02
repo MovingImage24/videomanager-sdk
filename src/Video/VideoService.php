@@ -17,9 +17,6 @@ class VideoService extends GuzzleClient
      */
     public function getVideoList()
     {
-        $apiKey = '12de-fb29-2946-bfd0-a2d0-3b69-Djp4-dc3b-809e-f981';
-        $developerKey = '5915-f8cc-4777-7a5a-416b-8bQ2-12e4-dc3b-809f-091d';
-
-        return $this->execute($this->getCommand('getVideoList', ['apiKey' => $apiKey, 'developerKey' => $developerKey]))['videolist'];
+        return $this->execute($this->getCommand('getVideoList'))['videolist'];
     }
 }
