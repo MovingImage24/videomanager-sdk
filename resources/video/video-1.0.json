@@ -1,0 +1,38 @@
+{
+  "name": "video service",
+  "apiVersion": "0.1",
+  "baseUrl": "https://videomanager.movingimage24.com/rest/{apiVersion}/",
+  "description": "video methods in video manager",
+  "operations": {
+    "getVideoList": {
+      "httpMethod": "GET",
+      "uri": "get_video_list.json",
+      "responseModel" : "Videos",
+      "parameters" : {
+        "limit" : {
+          "type": "string",
+          "required": true,
+          "location": "query",
+          "default" : "999999",
+          "sentAs": "videosperpage"
+        },
+        "publishState" : {
+          "type" : "string",
+          "required" : true,
+          "location" : "query",
+          "default": "3",
+          "sentAs": "show_type"
+        }
+      },
+      "data" : {
+        "api-key-authentication" : true
+      }
+
+    }
+  },
+  "models": {
+    "Videos" : {
+      "class" : "array<string, array<integer, Mi\\VideoManager\\SDK\\Model\\Video>>"
+    }
+  }
+}
