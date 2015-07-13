@@ -37,6 +37,14 @@
           "sentAs" : "login_user_passwd"
         }
       }
+    },
+    "getVideoManagerList": {
+      "httpMethod": "GET",
+      "uri": "getuservideodblist.json",
+      "responseModel" : "VideoManagers",
+      "data" : {
+        "api-key-authentication" : true
+      }
     }
   },
   "models": {
@@ -45,6 +53,9 @@
     },
     "User" : {
       "class" : "Mi\\VideoManager\\SDK\\Model\\User"
+    },
+    "VideoManagers" : {
+      "class" : "array<integer, string>"
     }
   }
 }

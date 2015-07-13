@@ -32,4 +32,12 @@ class SecurityService extends GuzzleClient
     {
         return $this->execute($this->getCommand('getUser', ['username' => $username]));
     }
+
+    /**
+     * @return String[]
+     */
+    public function getVideoManagerList()
+    {
+        return $this->execute($this->getCommand('getVideoManagerList'));
+    }
 }
