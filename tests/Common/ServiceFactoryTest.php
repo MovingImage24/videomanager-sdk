@@ -9,7 +9,9 @@ use Mi\Guzzle\ServiceBuilder\ServiceFactoryInterface;
 use Mi\VideoManager\SDK\Common\ServiceFactory;
 use Mi\VideoManager\SDK\Common\Subscriber\ApiKeyAuthentication;
 use Mi\VideoManager\SDK\Common\Subscriber\ProcessErrorResponse;
+use Mi\VideoManager\SDK\Common\Subscriber\UserTokenAuthentication;
 use Mi\VideoManager\SDK\Common\Token\ApiKeyTokenInterface;
+use Mi\VideoManager\SDK\Common\Token\UserTokenInterface;
 use Prophecy\Argument;
 
 /**
@@ -26,8 +28,9 @@ class ServiceFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $baseFactory = $this->prophesize(ServiceFactoryInterface::class);
         $apiKey      = $this->prophesize(ApiKeyTokenInterface::class);
+        $userToken      = $this->prophesize(UserTokenInterface::class);
 
-        $serviceFactory = new ServiceFactory($baseFactory->reveal(), $apiKey->reveal());
+        $serviceFactory = new ServiceFactory($baseFactory->reveal(), $apiKey->reveal(),$userToken->reveal());
         $client         = $this->prophesize(GuzzleClient::class);
         $emitter        = $this->prophesize(Emitter::class);
         $description        = $this->prophesize(Description::class);
@@ -37,6 +40,7 @@ class ServiceFactoryTest extends \PHPUnit_Framework_TestCase
 
         $emitter->attach(Argument::type(ProcessErrorResponse::class))->shouldBeCalled();
         $emitter->attach(Argument::type(ApiKeyAuthentication::class))->shouldBeCalled();
+        $emitter->attach(Argument::type(UserTokenAuthentication::class))->shouldBeCalled();
 
         $baseFactory->factory(['class' => GuzzleClient::class, 'description' => []])->willReturn($client->reveal());
 

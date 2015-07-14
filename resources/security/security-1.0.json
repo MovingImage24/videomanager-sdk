@@ -43,7 +43,7 @@
       "uri": "getuservideodblist.json",
       "responseModel" : "VideoManagers",
       "data" : {
-        "api-key-authentication" : true
+        "user-token-authentication" : true
       }
     }
   },
