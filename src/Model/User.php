@@ -29,4 +29,22 @@ class User
     {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getVideoManagerId()
+    {
+        return $this->videoManagerId;
+    }
+
+
 }
