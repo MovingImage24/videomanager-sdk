@@ -1,7 +1,7 @@
 {
   "name": "security service",
   "apiVersion": "gm",
-  "baseUrl": "https://videomanager.movingimage24.com/rest/gm/",
+  "baseUrl": "rest/gm/",
   "description": "security methods in video manager",
   "operations": {
     "getUser": {

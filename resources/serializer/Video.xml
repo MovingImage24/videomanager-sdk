@@ -3,5 +3,6 @@
   <class name="Mi\VideoManager\SDK\Model\Video" exclusion-policy="ALL">
     <property name="name" serialized-name="name " type="string" since-version="1.0" expose="true" />
     <property name="id" type="integer" since-version="1.0" expose="true" />
+    <property name="thumbnail" type="string" since-version="1.0" expose="true" />
   </class>
 </serializer>
