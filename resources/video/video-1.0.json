@@ -1,7 +1,7 @@
 {
   "name": "video service",
   "apiVersion": "0.1",
-  "baseUrl": "https://videomanager.movingimage24.com/rest/0.1/",
+  "baseUrl": "rest/0.1/",
   "description": "video methods in video manager",
   "operations": {
     "getVideoList": {

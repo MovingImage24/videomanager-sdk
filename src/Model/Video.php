@@ -11,6 +11,7 @@ class Video
 {
     private $id;
     private $name;
+    private $thumbnail;
 
     /**
      * @return integer
@@ -28,5 +29,13 @@ class Video
         return $this->name;
     }
 
-
+    /**
+     * thumbnail path without host and scheme
+     *
+     * @return string
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
 }
