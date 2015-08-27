@@ -13,8 +13,15 @@
           "type": "string",
           "required": true,
           "location": "query",
-          "default" : "999999",
+          "default" : "100",
           "sentAs": "videosperpage"
+        },
+        "page" : {
+          "type": "string",
+          "required": true,
+          "location": "query",
+          "default" : "1",
+          "sentAs": "page"
         },
         "publishState" : {
           "type" : "string",
@@ -27,10 +34,29 @@
       "data" : {
         "api-key-authentication" : true
       }
-
+    },
+    "getVideoListCount": {
+      "httpMethod": "GET",
+      "uri": "get_video_list_count.json",
+      "responseModel" : "VideoCount",
+      "parameters": {
+        "publishState" : {
+          "type" : "string",
+          "required" : true,
+          "location" : "query",
+          "default": "3",
+          "sentAs": "show_type"
+        }
+      },
+      "data" : {
+        "api-key-authentication" : true
+      }
     }
   },
   "models": {
+    "VideoCount" : {
+      "class": "array"
+    },
     "Videos" : {
       "class" : "array<string, array<Mi\\VideoManager\\SDK\\Model\\Video>>"
     }
