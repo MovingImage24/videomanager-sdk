@@ -51,6 +51,22 @@
       "data" : {
         "api-key-authentication" : true
       }
+    },
+    "getVideo": {
+      "httpMethod": "GET",
+      "uri": "get_video_object.json",
+      "responseModel" : "Video",
+      "parameters": {
+        "videoId" : {
+          "type" : "string",
+          "required" : true,
+          "location" : "query",
+          "sentAs": "videoid"
+        }
+      },
+      "data" : {
+        "api-key-authentication" : true
+      }
     }
   },
   "models": {
@@ -59,6 +75,9 @@
     },
     "Videos" : {
       "class" : "array<string, array<Mi\\VideoManager\\SDK\\Model\\Video>>"
+    },
+    "Video" : {
+      "class" : "Mi\\VideoManager\\SDK\\Model\\VideoObject"
     }
   }
 }
