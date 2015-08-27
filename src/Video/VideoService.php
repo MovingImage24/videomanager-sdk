@@ -4,7 +4,6 @@ namespace Mi\VideoManager\SDK\Video;
 
 use GuzzleHttp\Command\Event\ProcessEvent;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
-use Mi\VideoManager\SDK\Model\Video;
 
 /**
  * @author Alexander Miehe <alexander.miehe@movingimage.com>
@@ -17,11 +16,21 @@ class VideoService extends GuzzleClient
      * @param int|null $page
      * @param int|null $limit
      *
-     * @return Video[]
+     * @return \Mi\VideoManager\SDK\Model\Video[]
      */
     public function getVideoList($page = null, $limit = null)
     {
         return $this->execute($this->getCommand('getVideoList', ['page' => $page, 'limit' => $limit]))['videolist'];
+    }
+
+    /**
+     * @param int $videoId
+     *
+     * @return \Mi\VideoManager\SDK\Model\VideoObject
+     */
+    public function getVideo($videoId)
+    {
+        return $this->execute($this->getCommand('getVideo', ['videoId' => $videoId]));
     }
 
     /**
@@ -35,7 +44,7 @@ class VideoService extends GuzzleClient
     /**
      * @param int $chunkSize
      *
-     * @return Video[]
+     * @return \Mi\VideoManager\SDK\Model\Video[]
      */
     public function getAllVideos($chunkSize = 1000)
     {
