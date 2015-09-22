@@ -1,0 +1,8 @@
+{
+  "services": {
+    "channel": {
+      "class": "Mi\\VideoManager\\SDK\\Channel\\ChannelService",
+      "description" : "/mi/videomanager-sdk/channel/channel-1.0.json"
+    }
+  }
+}

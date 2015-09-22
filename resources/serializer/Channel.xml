@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+  <class name="Mi\VideoManager\SDK\Model\Channel" exclusion-policy="ALL">
+    <property name="id" type="integer" since-version="1.0" expose="true" />
+    <property name="name" type="string" since-version="1.0" expose="true" />
+    <property name="parentId" serialized-name="parent" type="integer" since-version="1.0" expose="true" />
+  </class>
+</serializer>
