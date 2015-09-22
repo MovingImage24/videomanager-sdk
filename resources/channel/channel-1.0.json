@@ -1,0 +1,21 @@
+{
+  "name": "channel service",
+  "apiVersion": "0.1",
+  "baseUrl": "rest/0.1/",
+  "description": "channel methods in video manager",
+  "operations": {
+    "getChannelList": {
+      "httpMethod": "GET",
+      "uri": "get_rubric_object_list.json",
+      "responseModel" : "Channel",
+      "data" : {
+        "api-key-authentication" : true
+      }
+    }
+  },
+  "models": {
+    "Channel" : {
+      "class" : "array<string, array<Mi\\VideoManager\\SDK\\Model\\Channel>>"
+    }
+  }
+}
