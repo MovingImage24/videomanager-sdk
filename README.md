@@ -5,6 +5,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/mi/videomanager-sdk/v/unstable)](https://packagist.org/packages/mi/videomanager-sdk)
 [![Total Downloads](https://poser.pugx.org/mi/videomanager-sdk/downloads)](https://packagist.org/packages/mi/videomanager-sdk)
 [![License](https://poser.pugx.org/mi/videomanager-sdk/license)](https://packagist.org/packages/mi/videomanager-sdk)
+[![StyleCI](https://styleci.io/repos/37715011/shield)](https://styleci.io/repos/37715011)
 
 ## Overview
 

@@ -3,7 +3,6 @@
 namespace Mi\VideoManager\SDK\Common;
 
 use Mi\Guzzle\ServiceBuilder\ServiceFactoryInterface;
-use Mi\Guzzle\ServiceBuilder\ServiceFactoryInterface as GuzzleServiceFactoryInterface;
 use Mi\VideoManager\SDK\Common\Subscriber\ApiKeyAuthentication;
 use Mi\VideoManager\SDK\Common\Subscriber\ProcessErrorResponse;
 use Mi\VideoManager\SDK\Common\Subscriber\UserTokenAuthentication;
@@ -20,12 +19,12 @@ class ServiceFactory implements ServiceFactoryInterface
     private $userToken;
 
     /**
-     * @param GuzzleServiceFactoryInterface $baseServiceFactory
-     * @param ApiKeyTokenInterface          $apiKeyToken
-     * @param UserTokenInterface            $userToken
+     * @param ServiceFactoryInterface $baseServiceFactory
+     * @param ApiKeyTokenInterface    $apiKeyToken
+     * @param UserTokenInterface      $userToken
      */
     public function __construct(
-        GuzzleServiceFactoryInterface $baseServiceFactory,
+        ServiceFactoryInterface $baseServiceFactory,
         ApiKeyTokenInterface $apiKeyToken = null,
         UserTokenInterface $userToken = null
     ) {
