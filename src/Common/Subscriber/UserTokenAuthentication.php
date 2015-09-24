@@ -22,7 +22,7 @@ class UserTokenAuthentication implements SubscriberInterface
     public function __construct(Description $description, UserTokenInterface $userToken = null)
     {
         $this->description = $description;
-        $this->userToken   = $userToken;
+        $this->userToken = $userToken;
     }
 
     /**
@@ -39,7 +39,7 @@ class UserTokenAuthentication implements SubscriberInterface
             return;
         }
 
-        $command   = $event->getCommand();
+        $command = $event->getCommand();
         $operation = $this->description->getOperation($command->getName());
 
         if ($operation->getData('user-token-authentication') === true) {

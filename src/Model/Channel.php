@@ -16,7 +16,7 @@ class Channel
     private $parentId;
 
     /**
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -32,9 +32,9 @@ class Channel
     }
 
     /**
-     * the parent channel id
+     * the parent channel id.
      *
-     * @return integer
+     * @return int
      */
     public function getParentId()
     {

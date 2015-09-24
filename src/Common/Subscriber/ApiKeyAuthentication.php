@@ -39,7 +39,7 @@ class ApiKeyAuthentication implements SubscriberInterface
             return;
         }
 
-        $command   = $event->getCommand();
+        $command = $event->getCommand();
         $operation = $this->description->getOperation($command->getName());
 
         if ($operation->getData('api-key-authentication') === true) {

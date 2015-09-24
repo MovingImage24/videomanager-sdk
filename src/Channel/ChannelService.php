@@ -2,7 +2,6 @@
 
 namespace Mi\VideoManager\SDK\Channel;
 
-use GuzzleHttp\Command\Event\ProcessEvent;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
 
 /**

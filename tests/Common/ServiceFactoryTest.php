@@ -1,6 +1,6 @@
 <?php
 
-namespace Mi\VideoManager\SDK\Tests\Common;
+namespace Mi\VideoManager\SDK\tests\Common;
 
 use GuzzleHttp\Command\Guzzle\Description;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
@@ -27,13 +27,13 @@ class ServiceFactoryTest extends \PHPUnit_Framework_TestCase
     public function factory()
     {
         $baseFactory = $this->prophesize(ServiceFactoryInterface::class);
-        $apiKey      = $this->prophesize(ApiKeyTokenInterface::class);
-        $userToken      = $this->prophesize(UserTokenInterface::class);
+        $apiKey = $this->prophesize(ApiKeyTokenInterface::class);
+        $userToken = $this->prophesize(UserTokenInterface::class);
 
-        $serviceFactory = new ServiceFactory($baseFactory->reveal(), $apiKey->reveal(),$userToken->reveal());
-        $client         = $this->prophesize(GuzzleClient::class);
-        $emitter        = $this->prophesize(Emitter::class);
-        $description        = $this->prophesize(Description::class);
+        $serviceFactory = new ServiceFactory($baseFactory->reveal(), $apiKey->reveal(), $userToken->reveal());
+        $client = $this->prophesize(GuzzleClient::class);
+        $emitter = $this->prophesize(Emitter::class);
+        $description = $this->prophesize(Description::class);
 
         $client->getEmitter()->willReturn($emitter->reveal());
         $client->getDescription()->willReturn($description->reveal());

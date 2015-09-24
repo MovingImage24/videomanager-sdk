@@ -34,7 +34,7 @@ class SecurityService extends GuzzleClient
     }
 
     /**
-     * @return String[]
+     * @return string[]
      */
     public function getVideoManagerList()
     {

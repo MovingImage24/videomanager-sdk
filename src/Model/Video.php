@@ -14,7 +14,7 @@ class Video
     private $thumbnail;
 
     /**
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -30,7 +30,7 @@ class Video
     }
 
     /**
-     * thumbnail path without host and scheme
+     * thumbnail path without host and scheme.
      *
      * @return string
      */

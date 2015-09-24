@@ -23,7 +23,7 @@ class User
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -39,12 +39,10 @@ class User
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getVideoManagerId()
     {
         return $this->videoManagerId;
     }
-
-
 }
