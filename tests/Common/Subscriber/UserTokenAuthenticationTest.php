@@ -1,6 +1,6 @@
 <?php
 
-namespace Mi\VideoManager\SDK\Tests\Common\Subscriber;
+namespace Mi\VideoManager\SDK\tests\Common\Subscriber;
 
 use GuzzleHttp\Command\Command;
 use GuzzleHttp\Command\Event\PreparedEvent;
@@ -9,7 +9,6 @@ use GuzzleHttp\Command\Guzzle\Operation;
 use GuzzleHttp\Message\Request;
 use GuzzleHttp\Query;
 use Mi\VideoManager\SDK\Common\Subscriber\UserTokenAuthentication;
-use Mi\VideoManager\SDK\Common\Token\ApiKeyTokenInterface;
 use Mi\VideoManager\SDK\Common\Token\UserTokenInterface;
 
 /**
@@ -29,7 +28,6 @@ class UserTokenAuthenticationTest extends \PHPUnit_Framework_TestCase
      */
     private $authentication;
 
-
     /**
      * @test
      */
@@ -45,7 +43,6 @@ class UserTokenAuthenticationTest extends \PHPUnit_Framework_TestCase
         $event->getCommand()->willReturn($this->command->reveal());
 
         $this->authentication->onPrepared($event->reveal());
-
     }
 
     /**
@@ -73,7 +70,6 @@ class UserTokenAuthenticationTest extends \PHPUnit_Framework_TestCase
         $query->add('user_api_token', 'token')->shouldBeCalled();
 
         $this->authentication->onPrepared($event->reveal());
-
     }
 
     /**
@@ -91,6 +87,6 @@ class UserTokenAuthenticationTest extends \PHPUnit_Framework_TestCase
         $this->operation = $this->prophesize(Operation::class);
         $this->userToken = $this->prophesize(UserTokenInterface::class);
 
-        $this->authentication = new UserTokenAuthentication($this->description->reveal(),$this->userToken->reveal());
+        $this->authentication = new UserTokenAuthentication($this->description->reveal(), $this->userToken->reveal());
     }
 }

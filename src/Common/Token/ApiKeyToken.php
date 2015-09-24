@@ -20,8 +20,8 @@ class ApiKeyToken implements ApiKeyTokenInterface
      */
     public function __construct($apiKey, $clientKey, $developerKey)
     {
-        $this->apiKey       = $apiKey;
-        $this->clientKey    = $clientKey;
+        $this->apiKey = $apiKey;
+        $this->clientKey = $clientKey;
         $this->developerKey = $developerKey;
     }
 

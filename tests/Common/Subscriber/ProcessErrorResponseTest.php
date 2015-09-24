@@ -1,6 +1,6 @@
 <?php
 
-namespace Mi\VideoManager\SDK\Tests\Common\Subscriber;
+namespace Mi\VideoManager\SDK\tests\Common\Subscriber;
 
 use GuzzleHttp\Command\Event\ProcessEvent;
 use GuzzleHttp\Message\Request;
@@ -28,7 +28,6 @@ class ProcessErrorResponseTest extends \PHPUnit_Framework_TestCase
         $response->json()->willReturn([]);
 
         $errorResponse->onProcess($event->reveal());
-
     }
 
     /**
@@ -49,7 +48,6 @@ class ProcessErrorResponseTest extends \PHPUnit_Framework_TestCase
         $response->json()->willReturn(['error' => 'msg', 'errorcode' => 'code']);
 
         $errorResponse->onProcess($event->reveal());
-
     }
 
     /**

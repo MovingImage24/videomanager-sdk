@@ -30,5 +30,4 @@ class ProcessErrorResponse implements SubscriberInterface
             throw new BadResponseException($jsonResponse['error'], $event->getRequest());
         }
     }
-
 }

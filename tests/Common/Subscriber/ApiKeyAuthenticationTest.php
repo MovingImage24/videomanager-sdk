@@ -1,6 +1,6 @@
 <?php
 
-namespace Mi\VideoManager\SDK\Tests\Common\Subscriber;
+namespace Mi\VideoManager\SDK\tests\Common\Subscriber;
 
 use GuzzleHttp\Command\Command;
 use GuzzleHttp\Command\Event\PreparedEvent;
@@ -28,7 +28,6 @@ class ApiKeyAuthenticationTest extends \PHPUnit_Framework_TestCase
      */
     private $authentication;
 
-
     /**
      * @test
      */
@@ -43,9 +42,7 @@ class ApiKeyAuthenticationTest extends \PHPUnit_Framework_TestCase
 
         $event->getCommand()->willReturn($this->command->reveal());
 
-
         $this->authentication->onPrepared($event->reveal());
-
     }
 
     /**
@@ -77,7 +74,6 @@ class ApiKeyAuthenticationTest extends \PHPUnit_Framework_TestCase
         $query->add('client_key', 'clientKey')->shouldBeCalled();
 
         $this->authentication->onPrepared($event->reveal());
-
     }
 
     /**
@@ -95,6 +91,6 @@ class ApiKeyAuthenticationTest extends \PHPUnit_Framework_TestCase
         $this->operation = $this->prophesize(Operation::class);
         $this->apiKey = $this->prophesize(ApiKeyTokenInterface::class);
 
-        $this->authentication = new ApiKeyAuthentication($this->description->reveal(),$this->apiKey->reveal());
+        $this->authentication = new ApiKeyAuthentication($this->description->reveal(), $this->apiKey->reveal());
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mi\VideoManager\SDK\Tests;
+namespace Mi\VideoManager\SDK\tests;
 
 use GuzzleHttp\Client;
 use JMS\Serializer\Builder\CallbackDriverFactory;
@@ -50,7 +50,6 @@ class POCTest extends \PHPUnit_Framework_TestCase
      */
     private function getServiceBuilder(ApiKeyTokenInterface $apiKeyToken = null, UserTokenInterface $userToken = null)
     {
-
         $client = new Client(['base_url' => 'https://api.edge-cdn.net']);
 
         $factory = new ServiceFactory(
@@ -71,7 +70,7 @@ class POCTest extends \PHPUnit_Framework_TestCase
     private function getPuliRepo()
     {
         $repo = new PathMappingRepository(new ArrayStore());
-        $repo->add('/mi/videomanager-sdk', new DirectoryResource(__DIR__ . '/../resources'));
+        $repo->add('/mi/videomanager-sdk', new DirectoryResource(__DIR__.'/../resources'));
 
         return $repo;
     }

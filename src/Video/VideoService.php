@@ -48,18 +48,18 @@ class VideoService extends GuzzleClient
      */
     public function getAllVideos($chunkSize = 1000)
     {
-        $result     = [];
+        $result = [];
         $videoCount = $this->getVideoListCount();
-        $maxPage    = ceil($videoCount / $chunkSize);
-        $commands   = [];
-        $videoList  = [];
+        $maxPage = ceil($videoCount / $chunkSize);
+        $commands = [];
+        $videoList = [];
 
         for ($page = 1; $page <= $maxPage; $page++) {
             $commands[] = $this->getCommand('getVideoList', ['page' => $page, 'limit' => $chunkSize]);
         }
 
         $options['process'] = function (ProcessEvent $e) use (&$result) {
-            $result[(int)$e->getRequest()->getQuery()->get('page')] = $e->getResult()['videolist'];
+            $result[(int) $e->getRequest()->getQuery()->get('page')] = $e->getResult()['videolist'];
         };
 
         $this->createPool($commands, $options)->wait();
