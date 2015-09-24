@@ -29,6 +29,18 @@
           "location" : "query",
           "default": "3",
           "sentAs": "show_type"
+        },
+        "channelIds" : {
+          "type": "array",
+          "required" : false,
+          "location": "query",
+          "sentAs" : "rubric_list",
+          "filters": [
+            {
+              "method" : "implode",
+              "args": [",", "@value"]
+            }
+          ]
         }
       },
       "data" : {
@@ -46,6 +58,18 @@
           "location" : "query",
           "default": "3",
           "sentAs": "show_type"
+        },
+        "channelIds" : {
+          "type": "array",
+          "required" : false,
+          "location": "query",
+          "sentAs" : "rubric_list",
+          "filters": [
+            {
+              "method" : "implode",
+              "args": [",", "@value"]
+            }
+          ]
         }
       },
       "data" : {

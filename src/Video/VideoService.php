@@ -15,12 +15,13 @@ class VideoService extends GuzzleClient
     /**
      * @param int|null $page
      * @param int|null $limit
+     * @param array    $optionalParameters
      *
      * @return \Mi\VideoManager\SDK\Model\Video[]
      */
-    public function getVideoList($page = null, $limit = null)
+    public function getVideoList($page = null, $limit = null, array $optionalParameters = [])
     {
-        return $this->execute($this->getCommand('getVideoList', ['page' => $page, 'limit' => $limit]))['videolist'];
+        return $this->execute($this->getVideoListCommand($page, $limit, $optionalParameters))['videolist'];
     }
 
     /**
@@ -34,19 +35,22 @@ class VideoService extends GuzzleClient
     }
 
     /**
+     * @param array $optionalParameters
+     *
      * @return int
      */
-    public function getVideoListCount()
+    public function getVideoListCount(array $optionalParameters = [])
     {
-        return $this->execute($this->getCommand('getVideoListCount'))['videocount'];
+        return $this->execute($this->getCommand('getVideoListCount', $optionalParameters))['videocount'];
     }
 
     /**
-     * @param int $chunkSize
+     * @param int   $chunkSize
+     * @param array $optionalParameters
      *
      * @return \Mi\VideoManager\SDK\Model\Video[]
      */
-    public function getAllVideos($chunkSize = 1000)
+    public function getAllVideos($chunkSize = 1000, array $optionalParameters = [])
     {
         $result = [];
         $videoCount = $this->getVideoListCount();
@@ -54,8 +58,8 @@ class VideoService extends GuzzleClient
         $commands = [];
         $videoList = [];
 
-        for ($page = 1; $page <= $maxPage; $page++) {
-            $commands[] = $this->getCommand('getVideoList', ['page' => $page, 'limit' => $chunkSize]);
+        for ($page = 1; $page <= $maxPage; ++$page) {
+            $commands[] = $this->getVideoListCommand($page, $chunkSize, $optionalParameters);
         }
 
         $options['process'] = function (ProcessEvent $e) use (&$result) {
@@ -73,5 +77,19 @@ class VideoService extends GuzzleClient
         );
 
         return $videoList;
+    }
+
+    /**
+     * @param int|null $page
+     * @param int|null $limit
+     * @param array    $optionalParameters
+     *
+     * @return \GuzzleHttp\Command\CommandInterface
+     */
+    private function getVideoListCommand($page = null, $limit = null, array $optionalParameters = [])
+    {
+        $parameters = array_merge($optionalParameters, ['page' => $page, 'limit' => $limit]);
+
+        return $this->getCommand('getVideoList', $parameters);
     }
 }
