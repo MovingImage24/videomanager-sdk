@@ -12,6 +12,7 @@ class VideoObject
     private $id;
     private $name;
     private $thumbnail;
+    private $length;
 
     /**
      * @return int
@@ -37,5 +38,13 @@ class VideoObject
     public function getThumbnail()
     {
         return $this->thumbnail;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLength()
+    {
+        return $this->length;
     }
 }
